@@ -1,5 +1,5 @@
 clc
-load('../data/companylist.mat');
+load(fullfile(pwd, 'data/companylist.mat'));
 symbols = companylist.Symbol;
 
 % fetch daily data for 5 years
