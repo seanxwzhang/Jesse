@@ -1,15 +1,19 @@
 import com.ib.client.*;
-
+import pipeline.Schema.DBManager;
+import pipeline.Schema.SymbolDirectory;
+import pipeline.SymbolFetcher;
+import utility.Config;
 import javax.swing.*;
 import java.util.*;
 
 
 public class Main  {
     public static void main (String args[]) {
-        PlayClient client = new PlayClient();
-        System.out.println("Getting data");
-        client.getDailyDataLastYear();
-        System.out.println("end");
+        Config config = new Config();
+        DBManager manager = new DBManager(config);
+        SymbolDirectory.createTable(manager.GetConnection());
+        SymbolFetcher fetcher = new SymbolFetcher(manager);
+        fetcher.fetchSync();
     }
 
 }
