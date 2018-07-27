@@ -1,2 +1,4 @@
 data/daily
 .idea/
+*.DS_Store
+target/
