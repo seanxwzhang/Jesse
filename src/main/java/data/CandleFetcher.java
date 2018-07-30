@@ -26,7 +26,7 @@ public class CandleFetcher implements EWrapper {
      * @return reqId: an id used for tracking data received from callback function
      */
     public int fetchStockDataImpl(String symbol, String duration, String barSize) {
-
+        return 0;
     }
 
 
